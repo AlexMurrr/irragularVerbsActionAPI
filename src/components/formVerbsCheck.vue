@@ -1,8 +1,8 @@
 <template>
   <h1>Изучаем неправильные глаголы</h1>
-  <h2>Введите имя глагола:</h2>
+  <h2>Введите для глагола: {{ irregularVerb }}</h2>
   <h3>
-    {{ irregularVerb }} {{ translate }} {{ simplePastV }}
+    {{ translate }} {{ simplePastV }}
     {{ simpleParticipleV }}
   </h3>
   <h3>{{}}</h3>
@@ -20,6 +20,8 @@
     Simple Participle: &nbsp;&nbsp;
     <input type="text" id="sParticiple" placeholder="простое причастие" />
   </div>
+
+   <button class="btn" id="btn">show result</button>
 </template>
 
 <script>
