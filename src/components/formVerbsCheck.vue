@@ -5,20 +5,27 @@
     {{ translate }} {{ simplePastV }}
     {{ simpleParticipleV }}
   </h3>
-  <h3>{{}}</h3>
+  
   <div>
     Translate: &nbsp;&nbsp;
-    <input type="text" id="translate" placeholder="перевод" autofocus />
+    <input v-model="trans"     
+    type="text" id="translate" 
+    placeholder="перевод" autofocus />   
   </div>
 
+ 
   <div>
     Simple Past: &nbsp;&nbsp;
-    <input type="text" id="sPast" placeholder="простое прошедшее" />
+    <input v-model="simPast" 
+    type="text" id="sPast" 
+    placeholder="простое прошедшее" />
   </div>
 
   <div>
     Simple Participle: &nbsp;&nbsp;
-    <input type="text" id="sParticiple" placeholder="простое причастие" />
+    <input v-model="simParticiple" type="text" 
+    id="sParticiple"
+    placeholder="простое причастие" />
   </div>
 
    <button class="btn" id="btn">show result</button>
@@ -32,6 +39,13 @@ export default {
     simplePastV: String,
     simpleParticipleV: String,
   },
+  data(){
+    return {
+      trans: '',
+      simPast: '',
+      simParticiple:''
+    }
+  }
 };
 </script>
 
