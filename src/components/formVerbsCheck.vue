@@ -5,7 +5,7 @@
     {{ translate }} {{ simplePastV }}
     {{ simpleParticipleV }}
   </h3>
-  
+  {{trans}}
   <div>
     Translate: &nbsp;&nbsp;
     <input v-model="trans"     
@@ -13,6 +13,8 @@
     placeholder="перевод" autofocus />   
   </div>
 
+  <h1 v-if=checkEnteredvalue(trans,translate)>It Is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
  
   <div>
     Simple Past: &nbsp;&nbsp;
@@ -44,6 +46,12 @@ export default {
       trans: '',
       simPast: '',
       simParticiple:''
+    }
+  },
+  methods:{
+    checkEnteredvalue(enterd, truthyValue){
+      if (enterd===truthyValue) return true
+      else return false
     }
   }
 };
