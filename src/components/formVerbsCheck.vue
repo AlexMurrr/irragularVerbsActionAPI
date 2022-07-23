@@ -10,17 +10,19 @@
     Translate: &nbsp;&nbsp;
     <input v-model="trans"     
     type="text" id="translate" 
-    placeholder="перевод" autofocus />   
+    placeholder="перевод" autofocus />  
+    <h3 v-if="equelTranslate">It is awesome!</h3>
+    <h3 v-else-if="equelTranslate===false">Oh no 😢</h3> 
   </div>
-
-  <h1 v-if=checkEnteredvalue(trans,translate)>It Is awesome!</h1>
-  <h1 v-else>Oh no 😢</h1>
+    
  
   <div>
     Simple Past: &nbsp;&nbsp;
     <input v-model="simPast" 
     type="text" id="sPast" 
     placeholder="простое прошедшее" />
+    <h3 v-if="equelSimplePast">It is awesome!</h3>
+    <h3 v-else-if="equelSimplePast===false">Oh no 😢</h3>
   </div>
 
   <div>
@@ -28,9 +30,20 @@
     <input v-model="simParticiple" type="text" 
     id="sParticiple"
     placeholder="простое причастие" />
+    <h3 v-if="equelSimpleParticiple">It is awesome!</h3>
+    <h3 v-else-if="equelSimpleParticiple===false">Oh no 😢</h3>
   </div>
 
-   <button class="btn" id="btn">show result</button>
+   <button @click="
+                   checkTranslate(trans, translate);
+                   checkSimplePast(simPast, simplePastV);
+                   checkSimpleParticiple(simParticiple, simpleParticipleV)
+                   "  
+   id="btn">show result</button>
+  
+   
+
+  
 </template>
 
 <script>
@@ -45,15 +58,43 @@ export default {
     return {
       trans: '',
       simPast: '',
-      simParticiple:''
+      simParticiple:'',
+      equelTranslate: '',
+      equelSimplePast: '',
+      equelSimpleParticiple: ''
     }
   },
   methods:{
-    checkEnteredvalue(enterd, truthyValue){
-      if (enterd===truthyValue) return true
-      else return false
-    }
-  }
+
+    checkTranslate(enterd, trueValue){
+      if (enterd===trueValue) {    
+        this.equelTranslate = true;  
+       } 
+      else{      
+      this.equelTranslate = false;
+      }      
+    },   
+   
+    checkSimplePast(enterd, trueValue){
+      if (enterd===trueValue) {    
+        this.equelSimplePast = true;  
+       } 
+      else{      
+      this.equelSimplePast = false;
+      }      
+    },
+
+     checkSimpleParticiple(enterd, trueValue){
+      if (enterd===trueValue) {    
+        this.equelSimpleParticiple = true;  
+       } 
+      else{      
+      this.equelSimpleParticiple = false;
+      }      
+    },
+
+  },
+  
 };
 </script>
 
