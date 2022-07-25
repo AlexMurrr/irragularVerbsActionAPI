@@ -5,7 +5,7 @@
     {{ translate }} {{ simplePastV }}
     {{ simpleParticipleV }}
   </h3>
-  <button @click="start">Start</button>  
+ 
   {{trans}}
   <div>
     Translate: &nbsp;&nbsp;
@@ -35,7 +35,8 @@
     <h6 v-else-if="simParticiple===''"></h6>
   </div>
 
-   <button @click="
+   <button v-if="isVisibleButton" @click="start">Start</button> 
+   <button v-else @click="
                    checkTranslate(trans, translate);
                    checkSimplePast(simPast, simplePastV);
                    checkSimpleParticiple(simParticiple, simpleParticipleV)
@@ -60,7 +61,8 @@ export default {
       simParticiple:'',
       equelTranslate: '',
       equelSimplePast: '',
-      equelSimpleParticiple: ''
+      equelSimpleParticiple: '',
+      isVisibleButton: true
     }
   },
   methods:{
@@ -71,7 +73,10 @@ export default {
        } 
       else{      
       this.equelTranslate = false;
-      }      
+      }  
+      
+      this.isVisibleButton = true;
+
     },   
    
     checkSimplePast(enterd, trueValue){
@@ -96,11 +101,13 @@ export default {
       this.trans = '';
       this.simPast = '';
       this.simParticiple = '';
-      this.$emit('nextVerb')
+      this.$emit('nextVerb');       
+      this.$forceUpdate();  
+      this.isVisibleButton = false  
       }  
 
   },
-      
+    
 };
 </script>
 

@@ -25,8 +25,7 @@ export default {
         1: ["beat", "[бить, колотить]", "beat", "beaten"],
         2: ["become", "становиться", "became", "become"],
       },
-      rendArrFromVerbForms: [],
-      rendNumfromVerbForms: '',
+      rendArrFromVerbForms: [],      
     };
   },
  
