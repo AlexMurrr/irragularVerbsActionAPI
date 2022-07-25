@@ -1,28 +1,28 @@
 <template>
-  <h1>Изучаем неправильные глаголы</h1>
-  <h2>Введите для глагола: {{ irregularVerb }}</h2>
+  <h3>Изучаем неправильные глаголы</h3>
+  <h3>Введите для глагола: {{ irregularVerb }}</h3>
   <h3>
     {{ translate }} {{ simplePastV }}
     {{ simpleParticipleV }}
   </h3>
+  <button @click="start">Start</button>  
   {{trans}}
   <div>
     Translate: &nbsp;&nbsp;
     <input v-model="trans"     
     type="text" id="translate" 
     placeholder="перевод" autofocus />  
-    <h3 v-if="equelTranslate">It is awesome!</h3>
-    <h3 v-else-if="equelTranslate===false">Oh no 😢</h3> 
-  </div>
-    
+    <h6 v-if="equelTranslate">It is awesome! +1</h6>
+    <h6 v-else-if="equelTranslate===false">Oh no 😢 -1</h6> 
+  </div>    
  
   <div>
     Simple Past: &nbsp;&nbsp;
     <input v-model="simPast" 
     type="text" id="sPast" 
     placeholder="простое прошедшее" />
-    <h3 v-if="equelSimplePast">It is awesome!</h3>
-    <h3 v-else-if="equelSimplePast===false">Oh no 😢</h3>
+    <h6 v-if="equelSimplePast">It is awesome! +1</h6>
+    <h6 v-else-if="equelSimplePast===false">Oh no 😢 -1</h6>
   </div>
 
   <div>
@@ -30,8 +30,9 @@
     <input v-model="simParticiple" type="text" 
     id="sParticiple"
     placeholder="простое причастие" />
-    <h3 v-if="equelSimpleParticiple">It is awesome!</h3>
-    <h3 v-else-if="equelSimpleParticiple===false">Oh no 😢</h3>
+    <h6 v-if="equelSimpleParticiple">It is awesome! +1</h6>
+    <h6 v-else-if="equelSimpleParticiple===false">Oh no 😢 -1</h6>
+    <h6 v-else-if="simParticiple===''"></h6>
   </div>
 
    <button @click="
@@ -39,9 +40,7 @@
                    checkSimplePast(simPast, simplePastV);
                    checkSimpleParticiple(simParticiple, simpleParticipleV)
                    "  
-   id="btn">show result</button>
-  
-   
+   id="btn">show result</button>    
 
   
 </template>
@@ -93,8 +92,15 @@ export default {
       }      
     },
 
+    start(){
+      this.trans = '';
+      this.simPast = '';
+      this.simParticiple = '';
+      this.$emit('nextVerb')
+      }  
+
   },
-  
+      
 };
 </script>
 
@@ -105,7 +111,7 @@ h {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 div {

@@ -1,9 +1,11 @@
 <template>
   <formVerbs
-    :irregularVerb="verbForms[rendomNumFromVerbs][0]"
-    :translate="verbForms[rendomNumFromVerbs][1]"
-    :simplePastV="verbForms[rendomNumFromVerbs][2]"
-    :simpleParticipleV="verbForms[rendomNumFromVerbs][3]"
+  v-bind="rendomNumFromVerbs"
+    :irregularVerb="rendArrFromVerbForms[0]"
+    :translate="rendArrFromVerbForms[1]"
+    :simplePastV="rendArrFromVerbForms[2]"
+    :simpleParticipleV="rendArrFromVerbForms[3]"
+    @nextVerb = rendomNumFromVerbs
   />
 
   <div></div>
@@ -23,14 +25,24 @@ export default {
         1: ["beat", "[бить, колотить]", "beat", "beaten"],
         2: ["become", "становиться", "became", "become"],
       },
+      rendArrFromVerbForms: [],
+      rendNumfromVerbForms: '',
     };
   },
-  computed: {
-    rendomNumFromVerbs() {
-      return Math.floor(Math.random() * Object.keys(this.verbForms).length);
+ 
+ 
+  methods: {
+    rendomNumFromVerbs() {          
+       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
+        Object.keys(this.verbForms).length)]
     },
-  },
-};
+
+    created: function(){
+        this.rendomNumFromVerbs()
+    }
+  
+  }
+}
 </script>
 
 <style></style>
