@@ -6,7 +6,7 @@
     {{ simpleParticipleV }}
   </h3>
  
-  {{trans}}
+  {{countPoint}}
   <div>
     Translate: &nbsp;&nbsp;
     <input v-model="trans"     
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     irregularVerb: String,
@@ -62,26 +63,42 @@ export default {
       equelTranslate: '',
       equelSimplePast: '',
       equelSimpleParticiple: '',
-      isVisibleButton: true
+      isVisibleButton: true,
+      countPoint: 0,
+
     }
   },
   methods:{
 
     checkTranslate(enterd, trueValue){
-      if (enterd===trueValue)  this.equelTranslate = true;           
-      else this.equelTranslate = false;                   
-        
+      if (enterd===trueValue){
+        this.equelTranslate = true;     
+        this.countPoint++;
+      }else{ 
+        this.equelTranslate = false;  
+        this.countPoint--;                 
+      }
       this.isVisibleButton = true;
     },   
    
     checkSimplePast(enterd, trueValue){
-      if (enterd===trueValue)  this.equelSimplePast = true; 
-      else this.equelSimplePast = false;                    
+      if (enterd===trueValue){
+        this.equelSimplePast = true;
+        this.countPoint++;
+      }else {
+        this.equelSimplePast = false;
+        this.countPoint--;
+      }                    
     },
 
      checkSimpleParticiple(enterd, trueValue){
-      if (enterd===trueValue) this.equelSimpleParticiple = true;        
-      else this.equelSimpleParticiple = false;            
+      if (enterd===trueValue){ 
+        this.equelSimpleParticiple = true;
+        this.countPoint++;
+      }else {
+        this.equelSimpleParticiple = false; 
+        this.countPoint--; 
+      }          
 
     },
 
@@ -90,15 +107,13 @@ export default {
       this.simPast = '';
       this.simParticiple = '';
       this.$emit('nextVerb');        
-      this.isVisibleButton = false  
+      this.isVisibleButton = false; 
       }  
 
   },
   computed:{
    
-    }
-  
-    
+    }    
 };
 </script>
 
@@ -108,7 +123,7 @@ h {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #252a30;
   margin-top: 10px;
 }
 
