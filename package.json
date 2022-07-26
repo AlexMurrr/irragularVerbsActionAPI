@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "prettier": "prettier --write .",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "tc": "jest --coverage" 
   },
   "dependencies": {
     "@vue/vue3-jest": "^28.0.1",
