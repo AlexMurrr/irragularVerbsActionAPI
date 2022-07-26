@@ -36,10 +36,10 @@
   </div>
 
    <button v-if="isVisibleButton" @click="start">Start</button> 
-   <button v-else @click="
-                   checkTranslate(trans, translate);
-                   checkSimplePast(simPast, simplePastV);
-                   checkSimpleParticiple(simParticiple, simpleParticipleV)
+   <button  v-else @click="
+                    checkTranslate(trans, translate);
+                    checkSimplePast(simPast, simplePastV);
+                    checkSimpleParticiple(simParticiple, simpleParticipleV)
                    "  
    id="btn">show result</button>    
 
@@ -68,45 +68,36 @@ export default {
   methods:{
 
     checkTranslate(enterd, trueValue){
-      if (enterd===trueValue) {    
-        this.equelTranslate = true;  
-       } 
-      else{      
-      this.equelTranslate = false;
-      }  
-      
+      if (enterd===trueValue)  this.equelTranslate = true;           
+      else this.equelTranslate = false;                   
+        
       this.isVisibleButton = true;
-
     },   
    
     checkSimplePast(enterd, trueValue){
-      if (enterd===trueValue) {    
-        this.equelSimplePast = true;  
-       } 
-      else{      
-      this.equelSimplePast = false;
-      }      
+      if (enterd===trueValue)  this.equelSimplePast = true; 
+      else this.equelSimplePast = false;                    
     },
 
      checkSimpleParticiple(enterd, trueValue){
-      if (enterd===trueValue) {    
-        this.equelSimpleParticiple = true;  
-       } 
-      else{      
-      this.equelSimpleParticiple = false;
-      }      
+      if (enterd===trueValue) this.equelSimpleParticiple = true;        
+      else this.equelSimpleParticiple = false;            
+
     },
 
     start(){
       this.trans = '';
       this.simPast = '';
       this.simParticiple = '';
-      this.$emit('nextVerb');       
-      this.$forceUpdate();  
+      this.$emit('nextVerb');        
       this.isVisibleButton = false  
       }  
 
   },
+  computed:{
+   
+    }
+  
     
 };
 </script>

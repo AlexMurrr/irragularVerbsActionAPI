@@ -36,10 +36,6 @@ export default {
         Object.keys(this.verbForms).length)]
     },
 
-    created: function(){
-        this.rendomNumFromVerbs()
-    }
-  
   }
 }
 </script>

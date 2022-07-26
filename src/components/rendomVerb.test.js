@@ -1,7 +1,7 @@
 import { render} from '@testing-library/vue';
-import formVerbsCheck from "./formVerbsCheck.vue"
+import rendomVerb from "./rendomVerb.vue"
 
 test ('render formVerbsCheck', ()=> {
-   const {debug} = render(formVerbsCheck)
+   const {debug} = render(rendomVerb)
    debug()  
 })
