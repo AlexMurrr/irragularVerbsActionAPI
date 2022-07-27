@@ -40,10 +40,10 @@
                     checkTranslate(trans, translate);
                     checkSimplePast(simPast, simplePastV);
                     checkSimpleParticiple(simParticiple, simpleParticipleV)
-                   "  
+                    countPointEmit()
+                  "   
    id="btn">show result</button>    
-
-  
+      
 </template>
 
 <script>
@@ -108,7 +108,12 @@ export default {
       this.simParticiple = '';
       this.$emit('nextVerb');        
       this.isVisibleButton = false; 
-      }  
+      this.countPoint = 0;
+      },
+      
+    countPointEmit(){
+      this.$emit('countPoint', this.countPoint)
+    }  
 
   },
   computed:{
@@ -129,7 +134,7 @@ h {
 
 div {
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 0.9;
   font-size: 1.6rem;
   font-weight: 700;
 }

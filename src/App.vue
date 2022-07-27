@@ -15,9 +15,7 @@ export default {
     rendomVerb,
   },
   computed: {
-    // count () {
-    //   //return store.state.count
-    // }
+   
   },
 };
 </script>
@@ -28,7 +26,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #2c3e50;  
+  background-color: rgb(215, 219, 248); 
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
 }
+ 
 </style>
