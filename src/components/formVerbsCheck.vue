@@ -105,10 +105,10 @@ export default {
     start(){
       this.trans = '';
       this.simPast = '';
-      this.simParticiple = '';
-      this.$emit('nextVerb');        
+      this.simParticiple = '';              
       this.isVisibleButton = false; 
       this.countPoint = 0;
+      this.$emit('nextVerb');
       },
       
     countPointEmit(){
