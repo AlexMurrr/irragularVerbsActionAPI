@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>22</h1>
+        <h1>{{numPoint}}</h1>
     </div>
 </template>
 
@@ -9,6 +9,10 @@
 export default {
   components: {
    
+  },
+
+  props:{
+    numPoint: Number,
   },
 
   data() {

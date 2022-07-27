@@ -2,8 +2,6 @@
 
 <div class="divFormVerbs">
 
-{{numberPoint}}
-
   <formVerbs  
     :irregularVerb="rendArrFromVerbForms[0]"
     :translate="rendArrFromVerbForms[1]"
@@ -13,7 +11,11 @@
    
     @countPoint = getCountPoint
   />   
-    <num-points class="point"></num-points>
+  <num-points 
+    class="point"
+    :numPoint="numberPoint"    
+  />
+ 
   </div>  
 </template>
 
