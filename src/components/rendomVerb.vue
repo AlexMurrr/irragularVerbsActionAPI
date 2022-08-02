@@ -7,8 +7,7 @@
     :translate="rendArrFromVerbForms[1]"
     :simplePastV="rendArrFromVerbForms[2]"
     :simpleParticipleV="rendArrFromVerbForms[3]"
-    @nextVerb = rendomNumFromVerbs
-   
+    @nextVerb = rendomNumFromVerbs   
     @countPoint = getCountPoint
   />   
   <num-points 

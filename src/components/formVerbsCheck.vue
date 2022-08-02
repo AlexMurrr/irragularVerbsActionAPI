@@ -1,12 +1,16 @@
 <template>
   <h3>Изучаем неправильные глаголы</h3>
-  <h3>Введите для глагола: {{ irregularVerb }}</h3>
-  <h3>
-    {{ translate }} {{ simplePastV }}
-    {{ simpleParticipleV }}
-  </h3>
- 
-  {{countPoint}}
+  <h3>Введите для глагола: {{ irregularVerb }}</h3>  
+
+   <button v-if="isVisibleButton" @click="start">Start</button> 
+   <button  v-else @click="
+                    checkTranslate(trans, translate);
+                    checkSimplePast(simPast, simplePastV);
+                    checkSimpleParticiple(simParticiple, simpleParticipleV)
+                    countPointEmit()
+                  "   
+   id="btn">show result</button>    
+  
   <div>
     Translate: &nbsp;&nbsp;
     <input v-model="trans"     
@@ -33,16 +37,7 @@
     <h6 v-if="equelSimpleParticiple">It is awesome! +1</h6>
     <h6 v-else-if="equelSimpleParticiple===false">Oh no 😢 -1</h6>
     <h6 v-else-if="simParticiple===''"></h6>
-  </div>
-
-   <button v-if="isVisibleButton" @click="start">Start</button> 
-   <button  v-else @click="
-                    checkTranslate(trans, translate);
-                    checkSimplePast(simPast, simplePastV);
-                    checkSimpleParticiple(simParticiple, simpleParticipleV)
-                    countPointEmit()
-                  "   
-   id="btn">show result</button>    
+  </div> 
       
 </template>
 
@@ -108,6 +103,7 @@ export default {
       this.simParticiple = '';              
       this.isVisibleButton = false; 
       this.countPoint = 0;
+
       this.$emit('nextVerb');
       },
       
@@ -137,5 +133,22 @@ div {
   line-height: 0.9;
   font-size: 1.6rem;
   font-weight: 700;
+}
+
+button{
+   display: inline-block;
+  
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255,255,255,.2), 0 -1px rgba(0,0,0,.8);
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  background: rgb(161, 199, 216) radial-gradient(150% 100% at 50% 5px, rgba(255,255,255,.2), rgba(0,0,0,0));
+  box-shadow: inset rgba(0,0,0,.6) 0 -2px 5px, inset rgba(252,255,255,.7) 0 2px 5px, rgba(0,0,0,.8) 0 2px 5px -1px;
+  color: rgb(24, 22, 31);
+  user-select: none;
 }
 </style>
