@@ -42,8 +42,8 @@ export default {
  
   methods: {
     rendomNumFromVerbs() {          
-       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
-        Object.keys(this.verbForms).length)]
+      this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
+      Object.keys(this.verbForms).length)]
     },
     getCountPoint(count){
         this.numberPoint+=count;

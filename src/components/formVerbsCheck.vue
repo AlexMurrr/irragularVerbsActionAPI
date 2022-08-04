@@ -153,4 +153,14 @@ button{
   background: #e2eddf;
   transition: all 0.22s;
 }
+
+input {
+  font-weight: 40;
+  width: 300px;
+  font-size: 15px;
+  padding: 6px 0 4px 10px;
+  border: 2px solid #474169;
+  background: #e2eddf;
+  border-radius: 20px;
+}
 </style>
