@@ -60,17 +60,16 @@ export default {
       equelSimpleParticiple: '',
       isVisibleButton: true,
       countPoint: 0,
-
     }
   },
   methods:{
 
     checkTranslate(enterd, trueValue){
       if (enterd===trueValue){
-        this.equelTranslate = true;     
+        this.equelTranslate = true; 
         this.countPoint++;
       }else{ 
-        this.equelTranslate = false;  
+        this.equelTranslate = false; 
         this.countPoint--;                 
       }
       this.isVisibleButton = true;
@@ -86,7 +85,7 @@ export default {
       }                    
     },
 
-     checkSimpleParticiple(enterd, trueValue){
+    checkSimpleParticiple(enterd, trueValue){
       if (enterd===trueValue){ 
         this.equelSimpleParticiple = true;
         this.countPoint++;
@@ -103,7 +102,6 @@ export default {
       this.simParticiple = '';              
       this.isVisibleButton = false; 
       this.countPoint = 0;
-
       this.$emit('nextVerb');
       },
       
@@ -136,19 +134,23 @@ div {
 }
 
 button{
-   display: inline-block;
-  
-  line-height: 50px;
-  font-size: 20px;
-  text-align: center;
+  color: #315727;
+  position: relative;
+  place-content: center;
+  place-items: center;
+  width: fit-content;
+  border-radius: 70px;
+  letter-spacing: 0.05em;
+  border: 3px solid #2d8579;
   text-decoration: none;
-  text-shadow: 0 1px rgba(255,255,255,.2), 0 -1px rgba(0,0,0,.8);
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 0.7rem 1.8rem;
+  white-space: nowrap;
+  font-weight: 700;
   outline: none;
-  border: none;
-  border-radius: 100px;
-  background: rgb(161, 199, 216) radial-gradient(150% 100% at 50% 5px, rgba(255,255,255,.2), rgba(0,0,0,0));
-  box-shadow: inset rgba(0,0,0,.6) 0 -2px 5px, inset rgba(252,255,255,.7) 0 2px 5px, rgba(0,0,0,.8) 0 2px 5px -1px;
-  color: rgb(24, 22, 31);
-  user-select: none;
+  background: #e2eddf;
+  transition: all 0.22s;
 }
 </style>
