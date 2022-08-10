@@ -1,6 +1,6 @@
 <template>
   <h3>Изучаем неправильные глаголы</h3>
-  <h3>Введите для глагола: {{ irregularVerb }}</h3>  
+  <h3>Введите для глагола: {{irregularVerb}}</h3>  
 
    <button v-if="isVisibleButton" @click="start">Start</button> 
    <button  v-else @click="
@@ -58,7 +58,7 @@ export default {
       equelTranslate: '',
       equelSimplePast: '',
       equelSimpleParticiple: '',
-      isVisibleButton: true,
+      isVisibleButton: false,
       countPoint: 0,
     }
   },
@@ -102,7 +102,7 @@ export default {
       this.simParticiple = '';              
       this.isVisibleButton = false; 
       this.countPoint = 0;
-      this.$emit('nextVerb');
+      this.$emit('nextVerb');      
       },
       
     countPointEmit(){

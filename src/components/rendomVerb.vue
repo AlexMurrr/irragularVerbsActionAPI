@@ -15,16 +15,20 @@
     :numPoint="numberPoint"    
   />
  
+   <start-randomVerb />
   </div>  
 </template>
 
 <script>
 import formVerbs from "./formVerbsCheck.vue";
-import numPoints from "./numPoints.vue"
+import numPoints from "./numPoints.vue";
+import startRandomVerb from "./startRandomVerb.vue"
+
 export default {
   components: {
     formVerbs,
     numPoints,
+    startRandomVerb,
   },
 
   data() {
@@ -47,9 +51,12 @@ export default {
     },
     getCountPoint(count){
         this.numberPoint+=count;
-    }
-
-  }
+    },
+  
+  },
+   beforeMount(){
+    this.rendomNumFromVerbs()
+ },
 }
 </script>
 

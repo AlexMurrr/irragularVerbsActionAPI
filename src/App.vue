@@ -1,7 +1,7 @@
 <template>
   <div>
-    <rendom-verb />    
-  </div>
+    <rendom-verb /> 
+     </div>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ import rendomVerb from "./components/rendomVerb.vue";
 export default {
   name: "App",
   components: {
-    rendomVerb,
+    rendomVerb,   
   },
   computed: {
    
