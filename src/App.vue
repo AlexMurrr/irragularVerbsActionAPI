@@ -1,7 +1,7 @@
 <template>
   <div>
     <rendom-verb /> 
-     </div>
+    </div>
 </template>
 
 <script>

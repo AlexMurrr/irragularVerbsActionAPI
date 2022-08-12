@@ -1,7 +1,7 @@
 <template>
   <div class="circle">
    <h1 class="time">{{time}}</h1>
-  </div>
+  </div>  
 </template>
 
 <script>
@@ -10,15 +10,28 @@
   export default{
     data(){
       return{
-        time: 3,
+        time: 0,
       }
     },
 
     methods:{
-      
-      
+      go (){
+        this.time +=1;
+        if(this.time === 3) {
+          this.time='go!';
+          this.$emit('nextVerb');           
+        }         
+      },    
 
-    },
+      myLoop(){
+        for(let i=0; i<3; i++){
+          setTimeout(this.go, i*2000)       
+      }         
+    }, 
+ },
+    beforeMount(){
+      this.myLoop();      
+    }
   }
 </script>
 

@@ -15,7 +15,9 @@
     :numPoint="numberPoint"    
   />
  
-   <start-randomVerb />
+   <start-randomVerb
+     @nextVerb = rendomNumFromVerbs 
+    />
   </div>  
 </template>
 
@@ -53,10 +55,7 @@ export default {
         this.numberPoint+=count;
     },
   
-  },
-   beforeMount(){
-    this.rendomNumFromVerbs()
- },
+  },  
 }
 </script>
 
