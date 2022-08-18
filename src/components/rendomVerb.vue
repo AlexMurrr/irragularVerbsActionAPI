@@ -8,7 +8,7 @@
     :simplePastV="rendArrFromVerbForms[2]"
     :simpleParticipleV="rendArrFromVerbForms[3]"
     @nextVerb = rendomNumFromVerbs   
-    @countPoint = getCountPoint
+    @countPoint = getCountPoint    
   />   
   <num-points 
     class="point"
@@ -19,6 +19,7 @@
      @nextVerb = rendomNumFromVerbs 
     />
   </div>  
+  
 </template>
 
 <script>

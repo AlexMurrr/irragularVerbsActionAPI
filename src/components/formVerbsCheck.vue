@@ -6,8 +6,8 @@
    <button  v-else @click="
                     checkTranslate(trans, translate);
                     checkSimplePast(simPast, simplePastV);
-                    checkSimpleParticiple(simParticiple, simpleParticipleV)
-                    countPointEmit()
+                    checkSimpleParticiple(simParticiple, simpleParticipleV);
+                    countPointEmit();
                   "   
    id="btn">show result</button>    
   
@@ -107,8 +107,8 @@ export default {
       
     countPointEmit(){
       this.$emit('countPoint', this.countPoint)
-    }  
-
+    },
+   
   },
   computed:{
    

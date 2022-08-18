@@ -17,15 +17,15 @@
     methods:{
       go (){
         this.time +=1;
-        if(this.time === 3) {
-          this.time='go!';
+        if(this.time === 4) {
+          this.time ='Go!';
           this.$emit('nextVerb');           
         }         
       },    
 
       myLoop(){
-        for(let i=0; i<3; i++){
-          setTimeout(this.go, i*2000)       
+        for(let i=0; i<4; i++){
+          setTimeout(this.go, i*1500)       
       }         
     }, 
  },
