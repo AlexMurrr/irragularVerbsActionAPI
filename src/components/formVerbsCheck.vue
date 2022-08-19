@@ -1,6 +1,6 @@
 <template>
-  <h3>Изучаем неправильные глаголы</h3>
-  <h3>Введите для глагола: {{irregularVerb}}</h3>  
+ 
+   <head-verb/>
 
    <button v-if="isVisibleButton" @click="start">Start</button> 
    <button  v-else @click="
@@ -42,8 +42,13 @@
 </template>
 
 <script>
-
+import headVerb from "./headVerb.vue"
 export default {
+
+   components:{
+    headVerb
+   }, 
+
   props: {
     irregularVerb: String,
     translate: String,
