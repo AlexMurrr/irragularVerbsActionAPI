@@ -1,19 +1,26 @@
 <template>
   <div>
     <rendom-verb /> 
+
+    {{count}}
+
     </div>
 </template>
 
 <script>
 import rendomVerb from "./components/rendomVerb.vue";
+import {store} from "./store/verbs"
 
 export default {
   name: "App",
   components: {
     rendomVerb,   
   },
+
   computed: {
-   
+   count () {
+      return store.state.count
+    }
   },
 };
 </script>
