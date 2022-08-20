@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+  import { store } from "../store/verbs"
 
   export default{
     data(){
@@ -19,7 +19,7 @@
         this.time +=1;
         if(this.time === 4) {
           this.time ='Go!';
-          this.$emit('nextVerb');           
+          store.commit('rendomNumFromVerbs');           
         }         
       },    
 

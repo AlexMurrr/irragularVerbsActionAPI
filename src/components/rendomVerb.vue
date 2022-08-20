@@ -3,12 +3,7 @@
 <div class="divFormVerbs">
 
   <formVerbs  
-    :irregularVerb="rendArrFromVerbForms[0]"
-    :translate="rendArrFromVerbForms[1]"
-    :simplePastV="rendArrFromVerbForms[2]"
-    :simpleParticipleV="rendArrFromVerbForms[3]"
-    @nextVerb = rendomNumFromVerbs   
-    @countPoint = getCountPoint    
+      
   />   
   <num-points 
     class="point"
@@ -16,7 +11,7 @@
   />
  
    <start-randomVerb
-     @nextVerb = rendomNumFromVerbs 
+    
     />
   </div>  
   
@@ -44,14 +39,10 @@ export default {
       rendArrFromVerbForms: [],  
       numberPoint: 0,    
     };
-  },
- 
+  }, 
  
   methods: {
-    rendomNumFromVerbs() {          
-      this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
-      Object.keys(this.verbForms).length)]
-    },
+   
     getCountPoint(count){
         this.numberPoint+=count;
     },

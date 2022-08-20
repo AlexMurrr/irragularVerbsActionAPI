@@ -5,15 +5,18 @@
     {{count}}
 
     </div>
-    {{verbArr[0]}}
+   
 </template>
 
 <script>
 import rendomVerb from "./components/rendomVerb.vue";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {store} from "./store/verbs"
 =======
 import { store } from "./store/verbs"
+>>>>>>> splitFormVerbsCheck
+=======
 >>>>>>> splitFormVerbsCheck
 
 export default {
@@ -21,6 +24,7 @@ export default {
   components: {
     rendomVerb,   
   },
+<<<<<<< HEAD
 
   computed: {
 <<<<<<< HEAD
@@ -33,6 +37,9 @@ export default {
    }
 >>>>>>> splitFormVerbsCheck
   },
+=======
+  
+>>>>>>> splitFormVerbsCheck
 };
 </script>
 

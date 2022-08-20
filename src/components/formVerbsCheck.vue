@@ -1,6 +1,9 @@
 <template>
  
    <head-verb/>
+   <translate-verb/>
+   <simple-past/>
+   <simple-participle/>
 
    <button v-if="isVisibleButton" @click="start">Start</button> 
    <button  v-else @click="
@@ -9,109 +12,44 @@
                     checkSimpleParticiple(simParticiple, simpleParticipleV);
                     countPointEmit();
                   "   
-   id="btn">show result</button>    
-  
-  <div>
-    Translate: &nbsp;&nbsp;
-    <input v-model="trans"     
-    type="text" id="translate" 
-    placeholder="перевод" autofocus />  
-    <h6 v-if="equelTranslate">It is awesome! +1</h6>
-    <h6 v-else-if="equelTranslate===false">Oh no 😢 -1</h6> 
-  </div>    
+   id="btn">show result</button>   
  
-  <div>
-    Simple Past: &nbsp;&nbsp;
-    <input v-model="simPast" 
-    type="text" id="sPast" 
-    placeholder="простое прошедшее" />
-    <h6 v-if="equelSimplePast">It is awesome! +1</h6>
-    <h6 v-else-if="equelSimplePast===false">Oh no 😢 -1</h6>
-  </div>
-
-  <div>
-    Simple Participle: &nbsp;&nbsp;
-    <input v-model="simParticiple" type="text" 
-    id="sParticiple"
-    placeholder="простое причастие" />
-    <h6 v-if="equelSimpleParticiple">It is awesome! +1</h6>
-    <h6 v-else-if="equelSimpleParticiple===false">Oh no 😢 -1</h6>
-    <h6 v-else-if="simParticiple===''"></h6>
-  </div> 
-      
 </template>
 
 <script>
 import headVerb from "./headVerb.vue"
+import translateVerb from "./translateVerb.vue"
+import simplePast from "./simplePast.vue"
+import simpleParticiple from "./simpleParticiple.vue"
 export default {
 
    components:{
-    headVerb
+    headVerb,
+    translateVerb,
+    simplePast,
+    simpleParticiple
    }, 
 
-  props: {
-    irregularVerb: String,
-    translate: String,
-    simplePastV: String,
-    simpleParticipleV: String,
+  props: {      
+    
   },
   data(){
-    return {
-      trans: '',
-      simPast: '',
-      simParticiple:'',
-      equelTranslate: '',
-      equelSimplePast: '',
-      equelSimpleParticiple: '',
+    return {         
+      equelTranslate: '',      
       isVisibleButton: false,
       countPoint: 0,
     }
   },
-  methods:{
+  methods:{     
 
-    checkTranslate(enterd, trueValue){
-      if (enterd===trueValue){
-        this.equelTranslate = true; 
-        this.countPoint++;
-      }else{ 
-        this.equelTranslate = false; 
-        this.countPoint--;                 
-      }
-      this.isVisibleButton = true;
-    },   
-   
-    checkSimplePast(enterd, trueValue){
-      if (enterd===trueValue){
-        this.equelSimplePast = true;
-        this.countPoint++;
-      }else {
-        this.equelSimplePast = false;
-        this.countPoint--;
-      }                    
-    },
-
-    checkSimpleParticiple(enterd, trueValue){
-      if (enterd===trueValue){ 
-        this.equelSimpleParticiple = true;
-        this.countPoint++;
-      }else {
-        this.equelSimpleParticiple = false; 
-        this.countPoint--; 
-      }          
-
-    },
-
-    start(){
-      this.trans = '';
-      this.simPast = '';
-      this.simParticiple = '';              
+    start(){                   
       this.isVisibleButton = false; 
       this.countPoint = 0;
-      this.$emit('nextVerb');      
+      
       },
       
     countPointEmit(){
-      this.$emit('countPoint', this.countPoint)
+      
     },
    
   },
