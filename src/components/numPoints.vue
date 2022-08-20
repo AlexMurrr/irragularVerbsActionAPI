@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{numPoint}}</h1>
+       
     </div>
 </template>
 

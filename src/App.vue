@@ -2,23 +2,18 @@
   <div>
     <rendom-verb /> 
     </div>
-    {{verbArr[0]}}
+   
 </template>
 
 <script>
 import rendomVerb from "./components/rendomVerb.vue";
-import { store } from "./store/verbs"
 
 export default {
   name: "App",
   components: {
     rendomVerb,   
   },
-  computed: {
-   verbArr(){
-    return store.getters.rendArrFromVerbForms
-   }
-  },
+  
 };
 </script>
 
