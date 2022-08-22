@@ -1,7 +1,7 @@
 <template>
     <div>
-      <button v-if="isVisible" @click="isVisible=!isVisible">Start</button> 
-      <button  v-else  @click="isVisible=!isVisible">show result</button> 
+      <button v-if="isVisible" @click="changebutton">Start</button> 
+      <button  v-else  @click="changebutton">show result</button> 
     </div>
 </template>
 <script>
@@ -12,7 +12,9 @@ export default{
         }
     },
     methods:{
-        
+        changebutton(){
+            this.isVisible = !this.isVisible
+        },
     },
     computed:{
         
