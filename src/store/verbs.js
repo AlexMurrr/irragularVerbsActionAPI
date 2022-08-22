@@ -28,8 +28,7 @@ export const store = createStore({
     },
     pastParticipleState(state){
       return state.rendArrFromVerbForms[3];
-    },
-    
+    },    
 
   },
   mutations: {

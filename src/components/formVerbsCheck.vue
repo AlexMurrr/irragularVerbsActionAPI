@@ -4,15 +4,9 @@
    <translate-verb/>
    <simple-past/>
    <simple-participle/>
+   <button-verb/>
 
-   <button v-if="isVisibleButton" @click="start">Start</button> 
-   <button  v-else @click="
-                    checkTranslate(trans, translate);
-                    checkSimplePast(simPast, simplePastV);
-                    checkSimpleParticiple(simParticiple, simpleParticipleV);
-                    countPointEmit();
-                  "   
-   id="btn">show result</button>   
+  
  
 </template>
 
@@ -21,13 +15,15 @@ import headVerb from "./headVerb.vue"
 import translateVerb from "./translateVerb.vue"
 import simplePast from "./simplePast.vue"
 import simpleParticiple from "./simpleParticiple.vue"
+import buttonVerb from "./buttonVerb.vue"
 export default {
 
    components:{
     headVerb,
     translateVerb,
     simplePast,
-    simpleParticiple
+    simpleParticiple,
+    buttonVerb
    }, 
 
   props: {      

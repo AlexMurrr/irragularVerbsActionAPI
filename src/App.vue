@@ -1,46 +1,21 @@
 <template>
   <div>
-    <rendom-verb /> 
+    <rendom-verb />    
 
-    {{count}}
-
-    </div>
+  </div>
    
 </template>
 
 <script>
 import rendomVerb from "./components/rendomVerb.vue";
-<<<<<<< HEAD
-<<<<<<< HEAD
-import {store} from "./store/verbs"
-=======
-import { store } from "./store/verbs"
->>>>>>> splitFormVerbsCheck
-=======
->>>>>>> splitFormVerbsCheck
 
 export default {
   name: "App",
   components: {
     rendomVerb,   
   },
-<<<<<<< HEAD
 
-  computed: {
-<<<<<<< HEAD
-   count () {
-      return store.state.count
-    }
-=======
-   verbArr(){
-    return store.getters.rendArrFromVerbForms
-   }
->>>>>>> splitFormVerbsCheck
-  },
-=======
-  
->>>>>>> splitFormVerbsCheck
-};
+}
 </script>
 
 <style>
