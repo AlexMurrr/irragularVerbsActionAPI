@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+        <h1>Hi guest</h1>
     </div>
 </template>
 <script>

@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <name-project/>
-  </div>
+  
+    <header-vue/>
+  
 </template>
 <script>
 
-import nameProject from "./components/nameProject.vue"
+import headerVue from "./components/headerVue.vue"
 
 export default{
 
   components:{
-    nameProject,
+    headerVue,
   }, 
 
   data(){
